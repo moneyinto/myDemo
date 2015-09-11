@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>登录与注册</title>
+    <link type="text/css" rel="stylesheet" href="css/loginRegister.css">
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/verifyCode.js"></script>
+    <script type="text/javascript" src="js/loginRegister.js"></script>
+</head>
+
+<body>
+
+    <div class="login-register-container">
+        <div class="login-register-tabs" id="loginRegister">
+            <div class="tabs-header">
+                <ul>
+                    <li class="active">登录</li>
+                    <li class="">注册</li>
+                </ul>
+            </div>
+
+            <div class="tabs-body">
+                <div class="login-tab tab" style="display: block">
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="text" name="phoneNumber" class="input-text" placeholder="手机号">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="password" name="password" class="input-text" placeholder="密码">
+                        </div>
+                    </div>
+
+                    <div class="form-item form-code">
+                        <div class="form-cont">
+                            <input type="text" name="verify" class="input-text" placeholder="验证码">
+                        </div>
+                    </div>
+
+                    <div class="form-item form-day">
+                        <div class="form-cont">
+                            <label><input type="checkbox">7天内免登录</label>
+                            <a href="" class="forget-password">忘记密码</a>
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="button" id="login" class="" value="登录">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="register-tab tab" style="display: none">
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="text" name="phoneNumber" class="input-text" placeholder="手机号">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="password" name="password" class="input-text" placeholder="密码">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="password" name="confirmPassword" class="input-text" placeholder="重复密码">
+                        </div>
+                    </div>
+
+                    <div class="form-item form-code">
+                        <div class="form-cont">
+                            <input type="text" name="verify" class="input-text" placeholder="验证码">
+                        </div>
+                    </div>
+
+                    <div class="form-item">
+                        <div class="form-cont">
+                            <input type="button" id="register" class="" value="注册">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

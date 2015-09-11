@@ -1,0 +1,91 @@
+.my-mask {
+    z-index: 19000000;
+    background-color: #000;
+    opacity: 0.3;
+    filter:alpha(opacity=30);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    _position: absolute;
+    pointer-events: auto;
+}
+
+.ny-model {
+    position: fixed;
+    min-width: 260px;
+    z-index: 20000000;
+    margin: auto auto;
+    box-shadow: 1px 1px 10px rgba(0,0,0,.3);
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.my-model-header {
+    padding: 0 80px 0 20px;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #F8F8F8;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    cursor: move;
+}
+
+.my-model-body {
+    position: relative;
+    padding: 20px;
+    line-height: 24px;
+    word-break: break-all;
+    font-size: 14px;
+    overflow: auto;
+}
+
+.my-model-footer {
+    text-align: right;
+    padding: 0 10px 12px;
+}
+
+.my-model-footer a {
+    height: 28px;
+    line-height: 28px;
+    margin: 0 6px;
+    padding: 5px 15px;
+    border: 1px #dedede solid;
+    background-color: #f1f1f1;
+    color: #333;
+    border-radius: 4px;
+    font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.my-model-footer .my-model-sure {
+    border-color: #4898d5;
+    background-color: #2e8ded;
+    color: #fff;
+}
+
+.my-model-close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+}
+
+.my-model-close a {
+    background: 0 -40px url(../img/icon.png) no-repeat;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: top;
+}
