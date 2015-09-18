@@ -1,0 +1,35 @@
+ul {
+    list-style-type: none;
+}
+
+.star {
+    position: relative;
+    width: 100%;
+    margin: 5px;
+    height: 26px;
+    line-height: 26px;
+}
+
+.star ul, #star span {
+    float: left;
+    display: inline;
+    height: 26px;
+    line-height: 26px;
+}
+
+.star ul {
+    margin: 0px 5px;
+    padding: 0px;
+}
+
+.star li {
+    float: left;
+    width: 24px;
+    cursor: pointer;
+    text-indent: -9999px;
+    background: url(../img/star.png) no-repeat;
+}
+
+.star li.on {
+    background: url(../img/star.png) 0 -28px no-repeat;
+}

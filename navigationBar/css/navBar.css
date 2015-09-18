@@ -1,0 +1,51 @@
+html, body, ul, li {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font: 12px/normal Verdana, Arial, Helvetica, sans-serif;
+    padding: 50px;
+}
+
+ul, li {
+    list-style-type: none;
+    text-transform: capitalize;
+}
+
+#nav {
+    display: block;
+}
+
+#nav .mainlevel {
+    background: #2d36ee;
+    float: left;
+    border-right: 1px solid #fff;
+    width: 140px;
+}
+
+#nav .mainlevel a {
+    color: #ffffff;
+    text-decoration: none;
+    line-height: 32px;
+    display: block;
+    padding: 0 20px;
+    width: 100px;
+    text-align: center;
+}
+
+#nav .mainlevel a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+#nav .mainlevel ul {
+    display: none;
+    position: absolute;
+}
+
+#nav .mainlevel li {
+    border-top: 1px solid #fff;
+    background: #2d36ee;
+    width: 140px;
+}

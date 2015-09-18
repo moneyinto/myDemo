@@ -1,0 +1,82 @@
+ol,ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.clock {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    border-radius: 200px;
+    background-color: #292a38;
+    margin: 50px auto;
+}
+
+.min-scale li,
+.hour-scale li {
+    position: absolute;
+    left: 48.5%;
+    top: 50%;
+    background-color: #ffffff;
+}
+
+.hour-scale li {
+    width: 10px;
+    height: 2px;
+}
+
+.min-scale li {
+    width: 10px;
+    height: 2px;
+}
+
+.number {
+    position: absolute;
+    height: 320px;
+    width: 320px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #fff;
+}
+.number li {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+.pointer li {
+    position: absolute;
+    transform-origin: left center;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+}
+.pointer li.hour {
+    width: 100px;
+    height: 3px;
+    margin-top: -1px;
+}
+.pointer li.min {
+    width: 120px;
+    height: 2px;
+    margin-top: -1px;
+}
+.pointer li.sec {
+    width: 140px;
+    height: 1px;
+    margin-top: -1px;
+}
+
+.pointer li.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    margin-top: -5px;
+    margin-left: -5px;
+}

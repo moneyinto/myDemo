@@ -2,16 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-    <script src="jquery.min.js"></script>
-    <style>
-        ul{list-style-type:none;}
-        .star{position:relative;width:100%;margin:5px;height:26px;line-height:26px;}
-        .star ul,#star span{float:left;display:inline;height:26px;line-height:26px;}
-        .star ul{margin:0px 5px; padding:0px;}
-        .star li{float:left;width:24px;cursor:pointer;text-indent:-9999px;background:url(star.png) no-repeat;}
-        .star li.on{background:url(star.png) 0 -28px no-repeat;}
-    </style>
+    <title>星级评价</title>
+    <link href="css/star.css" rel="stylesheet" type="text/css" />
+    <script src="../clock/js/jquery.min.js"></script>
+    <script src="js/star.js"></script>
 </head>
 <body>
 <div class="star">
@@ -23,36 +17,5 @@
         <li><a href="javascript:;">5</a></li>
     </ul>
 </div>
-
-<script>
-    $(window).ready(function () {
-        var store = 0;
-        $('.star ul').each(function () {
-            var star = $(this).find('li');
-            star.hover(function() {
-                selectStar($(this).index(), star);
-            }, function () {
-                if (store == 0) {
-                    star.removeClass('on');
-                } else {
-                    selectStar(store - 1, star)
-                }
-            }).click(function () {
-                store = $(this).index() + 1;
-                selectStar($(this).index(), star);
-            })
-        });
-
-        function selectStar(index, star) {
-            for (var i = 0; i < 5; i ++) {
-                if (i <= index) {
-                    star.eq(i).addClass('on');
-                } else {
-                    star.eq(i).removeClass('on');
-                }
-            }
-        }
-    });
-</script>
 </body>
 </html>
