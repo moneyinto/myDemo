@@ -1,0 +1,92 @@
+.text-box {
+    position: relative;
+    width: 198px;
+    height: 20px;
+    display: inline-block;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    vertical-align: middle;
+    border: 1px solid #95B8E7;
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.text-box .text-box-right {
+    position: absolute;
+    width: 18px;
+    height: 20px;
+    top: 0;
+    right: 0;
+}
+
+.text-box-right-arrow {
+    width: 18px;
+    height: 20px;
+    background: url('../img/arrow.png') #E0ECFF no-repeat center center;
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    opacity: 0.6;
+    text-decoration: none;
+    outline-style: none;
+}
+
+.text-box-right-arrow:hover {
+    opacity: 1;
+}
+
+.text-box input[type='text'] {
+    width: 174px;
+    font-size: 12px;
+    border: 0;
+    margin: 0;
+    padding: 3px;
+    white-space: normal;
+    vertical-align: top;
+    outline-style: none;
+    resize: none;
+    border-radius: 4px;
+}
+
+.text-box-focused {
+    box-shadow: 0 0 3px 0 #95B8E7;
+}
+
+.select-box {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    overflow: hidden;
+    text-align: left;
+    margin: 0;
+    border: 0;
+}
+
+.select-box.active {
+    display: block;
+}
+
+.select-list {
+    overflow: auto;
+    width: 198px;
+    height: 198px;
+    border: 1px solid #95B8E7;
+}
+
+.select-list-item {
+    font-size: 12px;
+    padding: 3px;
+    display: none;
+}
+
+.select-list-item.active {
+    display: block;
+}
+
+.select-list-item:hover {
+    background-color: #eaf2ff;
+    cursor: default;
+}
