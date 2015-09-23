@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>input</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/inputOption.js"></script>
+</head>
+<body>
+<div id="inputEnterToTab">
+    <p>按回车键跳到下一个输入框</p>
+    <input type="text" onkeydown="inputOption.inputEnter(this)" />
+    <input type="text" onkeydown="inputOption.inputEnter(this)" />
+    <input type="text" onkeydown="inputOption.inputEnter(this)" />
+    <input type="text" onkeydown="inputOption.inputEnter(this)" />
+</div>
+
+<div>
+    <p>只能输入数字</p>
+    <input onkeyup="value=value.replace(/\D/g,'')" />
+</div>
+
+<div>
+    <p>只能输入数字和小数点</p>
+    <input onkeyup="value=value.replace(/[^\d{1,}\.\d{1,}|\d{1,}]/g,'')" />
+</div>
+
+<div>
+    <p>只能输入数字和英文</p>
+    <input onkeyup="value=value.replace(/[\W]/g,'')" />
+</div>
+
+<div>
+    <p>只能输入英文</p>
+    <input onkeyup="value=value.replace(/[^a-zA-Z]/g,'')" />
+</div>
+
+<script>
+</script>
+</body>
+</html>
