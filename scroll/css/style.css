@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.content {
+    width: 200px;
+    float: left;
+}
+
+.box {
+    margin-top: 50px;
+}
+
+.content-demo {
+    top: 50px;
+}
