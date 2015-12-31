@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    width: 100%;
+}
+
+.st-box .st-title {
+    text-align: center;
+}
+
+.st-box .st-body {
+    padding: 20px;
+}
+
+.st-box .st-body .st-content-box {
+    float: left;
+    width: 198px;
+    text-align: center;
+    margin: 10px;
+}
+
+.st-box .st-body .st-content-box .st-input {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.st-box .st-body .st-content-box .st-square {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-color: greenyellow;
+    border: 1px solid #000000;
+}
+
+
+.st-box .st-body .st-content-box .st-ellipse {
+    width: 80px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 40px/50px;
+    background-color: greenyellow;
+    border: 1px solid #000000;
+}
+
+.st-box .st-body .st-content-box .st-arc {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-top-left-radius: 50px 35px;
+    border-top-right-radius: 50px 35px;
+    background-color: greenyellow;
+    border: 1px solid #000000;
+}
+
+.st-box .st-body .st-content-box .st-triangle {
+    width: 0;
+    height: 0;
+    margin: 0 auto;
+    border-top: 92px solid;
+    border-right: 30px solid;
+    border-bottom: 10px solid;
+    border-left: 50px solid;
+    border-color: blueviolet sandybrown greenyellow aqua;
+}
+
+.st-box .st-body .st-content-box .st-trapezoid {
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    background-color: transparent;
+    border-top: 30px solid blueviolet;
+    border-right: 30px solid sandybrown;
+    border-bottom: 30px solid greenyellow;
+    border-left: 30px solid aqua;
+}
+
+.st-box .st-body .st-content-box .st-semicircle {
+     width: 50px;
+     height: 100px;
+     margin: 0 auto;
+     border-top-left-radius: 50px;
+     border-bottom-left-radius: 50px;
+     background-color: greenyellow;
+     border: 1px solid #000000;
+}
+
+.st-box .st-body .st-content-box .st-moon {
+    width: 100px;
+    height: 100px;
+    margin: 50px auto;
+    border-radius: 50px;
+    background-color: white;
+    box-shadow:0 0 100px rgba(255, 255, 255, 0.70);
+}
+
+.add-reg {
+    float: left;
+    width: 65px;
+}
+
+.red-reg {
+    width: 65px;
+}
+
+.sure {
+    float: right;
+    width: 65px;
+}

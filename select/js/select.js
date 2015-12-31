@@ -57,7 +57,7 @@ function listItemStatus() {
 function listItemClick () {
     $('.select-list-item').click(function () {
         var text = $(this).text();
-        $('.text-box input[type="text"]').val(text);
-        $('.select-box').removeClass('active');
+            $('.text-box input[type="text"]').val(text);
+            $('.select-box').removeClass('active');
     })
 }
