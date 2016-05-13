@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>typeWriting</title>
-    <script src="js/jquery.min.js"></script>
     <style>
         #myWriting {
             text-align: center;
@@ -17,13 +16,14 @@
 </div>
 
 <script>
-    var text = $('#myWriting').attr('write-data');
+    var myWrite = document.getElementById('myWriting');
+    var text = myWrite.getAttribute('write-data');
     typeWriting(text, 0);
 
     function typeWriting(txt, n) {
         if (txt.length > n) {
             n++;
-            $('#myWriting').html(txt.substring(0, n));
+            myWrite.innerHTML = txt.substring(0, n);
             setTimeout(function () {
                 typeWriting(txt, n);
             }, 100)
