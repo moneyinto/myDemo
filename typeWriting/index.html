@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>typeWriting</title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        #myWriting {
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div id="myWriting" write-data="我们一起来学习web前端的知识吧！让我们都成为前端大牛！">
+
+</div>
+
+<script>
+    var text = $('#myWriting').attr('write-data');
+    typeWriting(text, 0);
+
+    function typeWriting(txt, n) {
+        if (txt.length > n) {
+            n++;
+            $('#myWriting').html(txt.substring(0, n));
+            setTimeout(function () {
+                typeWriting(txt, n);
+            }, 100)
+        } else {
+            typeWriting(txt, 0);
+        }
+    }
+</script>
+</body>
+</html>
