@@ -19,6 +19,23 @@
         text-align: center;
         padding: 10px;
     }
+    #mouseMove {
+        background: yellow;
+        width: 100px;
+        min-height: 100px;
+        text-align: center;
+        padding: 10px;
+    }
+    #scroll {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: blue;
+        width: 100px;
+        min-height: 100px;
+        text-align: center;
+        padding: 10px;
+    }
 </style>
 <body>
 <!--鼠标点击事件-->
@@ -28,6 +45,14 @@
 
 <div id="mouseClick2">
     鼠标点击
+</div>
+
+<div id="mouseMove">
+    鼠标位置
+</div>
+
+<div id="scroll">
+    鼠标滚轴滚动
 </div>
 <script>
     window.onload = function () {
@@ -59,6 +84,18 @@
             mouseClick2.innerHTML = "右键被按下";
         };
         bindMouseEvent(mouseClick2,left,middle,right);
+
+        var mouseMove = document.getElementById('mouseMove');
+        mouseMove.onmousemove = function () {
+            var client = getArea();
+            mouseMove.innerHTML = 'x:' + client.x + 'y:' + client.y;
+        };
+
+        mouseScroll(function(delta){
+            var obj = document.getElementById('scroll'),
+                current = parseInt(obj.offsetTop)+(delta*10);
+            obj.style.top = current+"px";
+        });
     };
 
     function appendTxt (selector ,txt) {
@@ -67,7 +104,7 @@
         selector.appendChild(text);
     }
 
-    function bindMouseEvent(el){
+    function bindMouseEvent (el) {
         var args = [].slice.call(arguments),
             el = el || document;
         args[0] = function(){},
@@ -82,6 +119,31 @@
                     }
                     args[e.which](e);
                 }
+    }
+
+    function getArea (e) {
+        e = e || window.event;
+        var x = e.pageX || (e.clientX +
+                (document.documentElement.scrollLeft
+                || document.body.scrollLeft));
+        var y= e.pageY || (e.clientY +
+                (document.documentElement.scrollTop
+                || document.body.scrollTop));
+        return {'x':x,'y':y};
+    }
+
+    var mouseScroll = function(fn){
+        var roll = function(){
+            var delta = 0,
+                    e = arguments[0] || window.event;
+            delta = (e.wheelDelta) ? e.wheelDelta / 120 : -(e.detail || 0) / 3;
+            fn(delta);//回调函数中的回调函数
+        };
+        if(window.netscape ){
+            document.addEventListener('DOMMouseScroll', roll, false);
+        }else{
+            document.onmousewheel = roll;
+        }
     }
 </script>
 </body>
