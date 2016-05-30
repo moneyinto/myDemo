@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>鼠标事件总结</title>
+</head>
+<style>
+    #mouseClick {
+        background: red;
+        width: 100px;
+        min-height: 100px;
+        text-align: center;
+        padding: 10px;
+    }
+</style>
+<body>
+<!--鼠标点击事件-->
+<div id="mouseClick">
+    鼠标点击
+</div>
+<script>
+    window.onload = function () {
+        var mouseClick = document.getElementById('mouseClick');
+        mouseClick.onmousedown = function () {
+            appendTxt(mouseClick, 'mousedown');
+        };
+        mouseClick.addEventListener('mouseup', function () {
+            appendTxt(mouseClick, 'mouseup');
+        });
+        mouseClick.onclick = function () {
+            appendTxt(mouseClick, 'click');
+        };
+        mouseClick.ondblclick = function () {
+            appendTxt(mouseClick, 'ondblclick');
+        };
+    };
+
+    function appendTxt (selector ,txt) {
+        var text = document.createElement('div');
+        text.innerText = txt;
+        selector.appendChild(text);
+    }
+</script>
+</body>
+</html>
