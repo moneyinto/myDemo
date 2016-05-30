@@ -5,8 +5,15 @@
     <title>鼠标事件总结</title>
 </head>
 <style>
-    #mouseClick {
+    #mouseClick1 {
         background: red;
+        width: 100px;
+        min-height: 100px;
+        text-align: center;
+        padding: 10px;
+    }
+    #mouseClick2 {
+        background: green;
         width: 100px;
         min-height: 100px;
         text-align: center;
@@ -15,30 +22,66 @@
 </style>
 <body>
 <!--鼠标点击事件-->
-<div id="mouseClick">
+<div id="mouseClick1">
+    鼠标点击
+</div>
+
+<div id="mouseClick2">
     鼠标点击
 </div>
 <script>
     window.onload = function () {
-        var mouseClick = document.getElementById('mouseClick');
-        mouseClick.onmousedown = function () {
-            appendTxt(mouseClick, 'mousedown');
+        var mouseClick1 = document.getElementById('mouseClick1');
+        mouseClick1.onmousedown = function () {
+            appendTxt(mouseClick1, 'mousedown');
         };
-        mouseClick.addEventListener('mouseup', function () {
-            appendTxt(mouseClick, 'mouseup');
+        mouseClick1.addEventListener('mouseup', function () {
+            appendTxt(mouseClick1, 'mouseup');
         });
-        mouseClick.onclick = function () {
-            appendTxt(mouseClick, 'click');
+        mouseClick1.onclick = function () {
+            appendTxt(mouseClick1, 'click');
         };
-        mouseClick.ondblclick = function () {
-            appendTxt(mouseClick, 'ondblclick');
+        mouseClick1.ondblclick = function () {
+            appendTxt(mouseClick1, 'dblclick');
         };
+        mouseClick1.oncontextmenu = function () {
+            appendTxt(mouseClick1, 'contextmenu');
+        };
+
+        var mouseClick2 = document.getElementById('mouseClick2');
+        var left = function(){
+            mouseClick2.innerHTML = "左键被按下";
+        };
+        var middle = function(){
+            mouseClick2.innerHTML = "中键被按下";
+        };
+        var right = function(){
+            mouseClick2.innerHTML = "右键被按下";
+        };
+        bindMouseEvent(mouseClick2,left,middle,right);
     };
 
     function appendTxt (selector ,txt) {
         var text = document.createElement('div');
         text.innerText = txt;
         selector.appendChild(text);
+    }
+
+    function bindMouseEvent(el){
+        var args = [].slice.call(arguments),
+            el = el || document;
+        args[0] = function(){},
+                args[1] = args[1] || args[0],
+                args[2] = args[2] || args[0],
+                args[3] = args[3] || args[0],
+                el.onmousedown = function(e){
+                    e = e || window.event;
+                    var button = e.button;
+                    if ( !e.which && isFinite(button) ) {
+                        e.which  = [0,1,3,0,2,0,0,0][button];//0现在代表没有意义
+                    }
+                    args[e.which](e);
+                }
     }
 </script>
 </body>
